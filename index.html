@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaheen Memon — Engineer · AI Builder · PM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080C10;
+  --bg2:#0D1117;
+  --bg3:#111820;
+  --card:#0F1923;
+  --border:#1E2D3D;
+  --border2:#243344;
+  --text:#E8EDF3;
+  --muted:#6B8097;
+  --dim:#3D5166;
+  --accent:#3B9EFF;
+  --accent2:#00D4AA;
+  --accent3:#FF6B6B;
+  --accent4:#F5A623;
+  --yellow:#FFD166;
+  --purple:#9B72FF;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(8,12,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;font-weight:400;letter-spacing:0.02em;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--accent);color:#000;padding:0.5rem 1.25rem;border-radius:6px;font-size:0.875rem;font-weight:500;text-decoration:none;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2rem 4rem;max-width:1100px;margin:0 auto;position:relative}
+.hero-label{font-size:0.75rem;font-weight:400;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.hero-label::before{display:none}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-0.04em;color:var(--text);margin-bottom:1.5rem}
+.hero h1 .line2{color:var(--accent)}
+.hero-sub{font-size:1.125rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;font-weight:300;line-height:1.8}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.625rem;margin-bottom:3rem}
+.tag{padding:0.375rem 0.875rem;border:1px solid var(--border2);border-radius:100px;font-size:0.8rem;color:var(--muted);font-weight:400}
+.tag.active{border-color:var(--accent);color:var(--accent);background:rgba(59,158,255,0.08)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#000;padding:0.875rem 2rem;border-radius:8px;font-weight:500;font-size:0.9375rem;text-decoration:none;transition:opacity 0.2s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{border:1px solid var(--border2);color:var(--muted);padding:0.875rem 2rem;border-radius:8px;font-weight:400;font-size:0.9375rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hero-scroll{position:absolute;bottom:3rem;left:2rem;display:flex;align-items:center;gap:0.75rem;color:var(--dim);font-size:0.75rem;letter-spacing:0.1em}
+.scroll-line{width:3rem;height:1px;background:var(--dim)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:5rem}
+.stat{background:var(--card);padding:1.5rem 1.25rem;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--text);display:block;line-height:1}
+.stat-label{font-size:0.75rem;color:var(--muted);margin-top:0.375rem;display:block}
+
+/* SECTION CHROME */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:0.7rem;font-weight:400;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.section-label::before{display:none}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem}
+.section-desc{color:var(--muted);max-width:500px;font-weight:300;font-size:1rem}
+.section-header{margin-bottom:3.5rem}
+.divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.25s}
+.skill-card:hover{border-color:var(--border2)}
+.skill-card-icon{width:2.5rem;height:2.5rem;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.25rem}
+.skill-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)}
+.skill-card p{font-size:0.875rem;color:var(--muted);line-height:1.7}
+
+/* PROJECTS */
+.projects-grid{display:grid;gap:1.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;transition:border-color 0.25s,transform 0.2s}
+.project-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.project-card.featured{border-color:var(--border2);background:linear-gradient(135deg,#0F1923 0%,#0D1A2A 100%)}
+.project-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.badge{padding:0.25rem 0.625rem;border-radius:100px;font-size:0.7rem;font-weight:500;letter-spacing:0.03em}
+.badge-blue{background:rgba(59,158,255,0.12);color:#7DC5FF;border:1px solid rgba(59,158,255,0.2)}
+.badge-teal{background:rgba(0,212,170,0.1);color:#4EEFD4;border:1px solid rgba(0,212,170,0.2)}
+.badge-purple{background:rgba(155,114,255,0.1);color:#C4A8FF;border:1px solid rgba(155,114,255,0.2)}
+.badge-orange{background:rgba(245,166,35,0.1);color:#F5C842;border:1px solid rgba(245,166,35,0.2)}
+.badge-red{background:rgba(255,107,107,0.1);color:#FF9999;border:1px solid rgba(255,107,107,0.2)}
+.badge-green{background:rgba(74,222,128,0.1);color:#86EFAC;border:1px solid rgba(74,222,128,0.2)}
+.project-title{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
+.project-role{font-size:0.8rem;color:var(--accent);font-weight:500;margin-bottom:0.875rem;letter-spacing:0.04em;text-transform:uppercase}
+.project-desc{font-size:0.9375rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem;font-weight:300}
+.project-stack{display:flex;flex-wrap:wrap;gap:0.5rem}
+.stack-item{font-size:0.75rem;color:var(--dim);font-family:'DM Sans',monospace;padding:0.2rem 0.5rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px}
+.project-meta{text-align:right;min-width:120px}
+.project-year{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--border2);display:block;line-height:1}
+.project-duration{font-size:0.75rem;color:var(--dim);margin-top:0.25rem}
+.project-highlight{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;font-weight:500;color:var(--accent2);margin-top:1rem;padding:0.4rem 0.875rem;background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.15);border-radius:100px}
+
+/* FEATURED PROJECT BIG */
+.project-card-big{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.project-card-big::before{content:'FEATURED';position:absolute;top:1.5rem;right:1.5rem;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;color:var(--accent);background:rgba(59,158,255,0.1);border:1px solid rgba(59,158,255,0.2);padding:0.25rem 0.625rem;border-radius:100px}
+.big-stat{display:inline-flex;align-items:baseline;gap:0.375rem;background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.15);border-radius:8px;padding:0.75rem 1.25rem;margin-right:0.75rem;margin-bottom:0.75rem}
+.big-stat-num{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent2)}
+.big-stat-label{font-size:0.8rem;color:var(--muted)}
+
+/* TIMELINE / EXPERIENCE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:3rem}
+.timeline-item::before{content:'';position:absolute;left:-2.375rem;top:0.4rem;width:0.75rem;height:0.75rem;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.timeline-item:last-child{margin-bottom:0}
+.tl-period{font-size:0.75rem;color:var(--accent);font-weight:500;letter-spacing:0.05em;margin-bottom:0.375rem}
+.tl-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.2rem}
+.tl-company{font-size:0.875rem;color:var(--muted);margin-bottom:0.875rem}
+.tl-bullets{list-style:none}
+.tl-bullets li{font-size:0.9rem;color:var(--muted);line-height:1.7;padding-left:1rem;position:relative;margin-bottom:0.25rem;font-weight:300}
+.tl-bullets li::before{content:'→';position:absolute;left:0;color:var(--dim)}
+
+/* RESEARCH */
+.research-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:1.25rem;transition:border-color 0.25s}
+.research-card:hover{border-color:var(--border2)}
+.research-type{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem}
+.research-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.625rem}
+.research-desc{font-size:0.9rem;color:var(--muted);line-height:1.75;font-weight:300}
+.research-result{margin-top:0.875rem;font-size:0.8rem;color:var(--accent2);display:flex;align-items:center;gap:0.5rem}
+.research-result::before{content:'◆';font-size:0.55rem}
+
+/* PM SECTION */
+.pm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-bottom:2.5rem}
+.pm-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.pm-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
+.pm-num{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--border2);line-height:1}
+.pm-icon{width:2.25rem;height:2.25rem;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.pm-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
+.pm-desc{font-size:0.875rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* SKILLS TABLE */
+.skills-table{width:100%;border-collapse:collapse}
+.skills-table tr{border-bottom:1px solid var(--border)}
+.skills-table tr:last-child{border-bottom:none}
+.skills-table td{padding:0.875rem 0;vertical-align:top}
+.skills-table td:first-child{width:160px;font-size:0.8rem;color:var(--accent);font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding-right:2rem}
+.skills-table td:last-child{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.7}
+
+/* CONTACT */
+.contact-wrapper{background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color 0.2s,background 0.2s}
+.contact-link:hover{border-color:var(--accent);background:rgba(59,158,255,0.05)}
+.contact-link-icon{width:2.25rem;height:2.25rem;border-radius:8px;background:rgba(59,158,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0}
+.contact-link-text{font-size:0.875rem;color:var(--text);font-weight:400}
+.contact-link-sub{font-size:0.75rem;color:var(--muted)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--dim);font-size:0.8rem;max-width:1100px;margin:0 auto}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp 0.7s ease forwards}
+.fade-up:nth-child(1){animation-delay:0.1s}
+.fade-up:nth-child(2){animation-delay:0.2s}
+.fade-up:nth-child(3){animation-delay:0.3s}
+.fade-up:nth-child(4){animation-delay:0.4s}
+.fade-up:nth-child(5){animation-delay:0.5s}
+.fade-up:nth-child(6){animation-delay:0.6s}
+
+@media(max-width:768px){
+  nav{padding:1rem}
+  .nav-links{display:none}
+  .hero h1{font-size:2.5rem}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .project-card{grid-template-columns:1fr}
+  .project-meta{text-align:left}
+  .contact-wrapper{grid-template-columns:1fr;gap:2rem}
+  .project-card-big::before{display:none}
+}
+
+/* CURSOR GLOW */
+.glow{position:fixed;pointer-events:none;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,158,255,0.04) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:0;transition:opacity 0.3s}
+</style>
+</head>
+<body>
+
+<div class="glow" id="glow"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#engineering">Engineering</a></li>
+    <li><a href="#ai">AI Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#pm">PM Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label fade-up">Available for opportunities</div>
+  <h1 class="fade-up">Shaheen<br><span class="line2">Memon.</span></h1>
+  <p class="hero-sub fade-up">Software engineer who builds AI systems, writes product specs, and ships end-to-end — from blank page to deployed product.</p>
+  <div class="hero-tags fade-up">
+    <span class="tag active">Full-Stack (MERN)</span>
+    <span class="tag active">AI / LLM Builder</span>
+    <span class="tag active">RAG Systems</span>
+    <span class="tag">Product Manager</span>
+    <span class="tag">AWS + Azure</span>
+    <span class="tag">Python</span>
+    <span class="tag">Agile / Taiga</span>
+  </div>
+  <div class="hero-actions fade-up">
+    <a href="#engineering" class="btn-primary">View Projects →</a>
+    <a href="mailto:shaheenmeman200023@gmail.com" class="btn-ghost">Get in Touch</a>
+  </div>
+
+  <div class="stats-row fade-up">
+    <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Years building</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Commercial products</span></div>
+    <div class="stat"><span class="stat-num">6+</span><span class="stat-label">AI/ML projects</span></div>
+    <div class="stat"><span class="stat-num">4.0</span><span class="stat-label">MSc GPA</span></div>
+  </div>
+
+  <div class="hero-scroll"><span class="scroll-line"></span>scroll</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section>
+  <div class="section-header">
+    <div class="section-label">What I work with</div>
+    <h2 class="section-title">Technical Stack</h2>
+  </div>
+  <table class="skills-table">
+    <tr><td>AI & LLMs</td><td>LLMs, RAG Systems, LangChain, Prompt Engineering, AI Agents, FAISS, NLP Pipelines, Explainable AI (XAI), OpenAI & Anthropic APIs</td></tr>
+    <tr><td>Programming</td><td>Python, JavaScript, SQL, R, MERN Stack (MongoDB, Express, React, Node.js), Excel VBA</td></tr>
+    <tr><td>Cloud</td><td>AWS (EC2, S3, RDS, API Gateway), Microsoft Azure, Azure Data Factory, Blob Storage, Azure SQL Server</td></tr>
+    <tr><td>Analytics</td><td>Tableau, Power BI, Statistical Modeling, Forecasting, KPI Dashboards, Excel (advanced)</td></tr>
+    <tr><td>PM & Agile</td><td>Taiga, Jira, Trello, Slack, Confluence, Agile/Scrum, Sprint Planning, Stakeholder Management</td></tr>
+    <tr><td>Research</td><td>Quantitative Analysis, Behavioral Modeling, Hypothesis Testing, AI Evaluation, Academic Writing</td></tr>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- ENGINEERING PROJECTS -->
+<section id="engineering">
+  <div class="section-header">
+    <div class="section-label">Software Engineering</div>
+    <h2 class="section-title">What I've Built</h2>
+    <p class="section-desc">Full-stack products, cloud pipelines, and automation systems — built, shipped, and documented.</p>
+  </div>
+
+  <!-- TravelGPT -->
+  <div class="project-card-big">
+    <div class="project-badges">
+      <span class="badge badge-blue">MERN Stack</span>
+      <span class="badge badge-teal">OpenAI GPT</span>
+      <span class="badge badge-purple">Full-Stack</span>
+      <span class="badge badge-green">Solo Dev + PM</span>
+    </div>
+    <div class="project-title">TravelGPT — AI Travel Planning Web App</div>
+    <div class="project-role">Lead Engineer & Product Manager · 6 months · 2025</div>
+    <div class="project-desc">Built a complete AI-powered travel assistant from scratch — conversational interface, user accounts, day-by-day itinerary builder, budget estimates, and destination recommendations. Wrote the full product spec, set up Taiga for sprint tracking, and submitted with a comprehensive project report.</div>
+    <div style="margin:1.5rem 0">
+      <div class="big-stat"><span class="big-stat-num">6</span><span class="big-stat-label">months delivered</span></div>
+      <div class="big-stat"><span class="big-stat-num">MERN</span><span class="big-stat-label">full stack</span></div>
+      <div class="big-stat"><span class="big-stat-num">GPT</span><span class="big-stat-label">integrated</span></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-item">MongoDB</span>
+      <span class="stack-item">Express.js</span>
+      <span class="stack-item">React</span>
+      <span class="stack-item">Node.js</span>
+      <span class="stack-item">OpenAI API</span>
+      <span class="stack-item">JWT Auth</span>
+      <span class="stack-item">Taiga</span>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Nentnology Mortgage -->
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-orange">FinTech</span>
+          <span class="badge badge-blue">AWS</span>
+          <span class="badge badge-purple">Commercial</span>
+        </div>
+        <div class="project-title">Mortgage Automation Platform</div>
+        <div class="project-role">Lead PM — Nentnology Solutions</div>
+        <div class="project-desc">Commercial mortgage automation tool. Wrote the entire product spec — scope, end-to-end flowcharts (application → underwriting → approval → disbursement), AWS architecture, database schema, third-party API specs (credit, property valuation, KYC), and phased delivery timeline.</div>
+        <div class="project-stack">
+          <span class="stack-item">MERN</span><span class="stack-item">AWS EC2/S3/RDS</span><span class="stack-item">API Gateway</span><span class="stack-item">MongoDB</span>
+        </div>
+        <div class="project-highlight">✦ Full spec + flowcharts delivered to client</div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+        <div class="project-duration">Commercial</div>
+      </div>
+    </div>
+
+    <!-- Nentnology Freelancer -->
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-purple">Marketplace</span>
+          <span class="badge badge-teal">Wireframes</span>
+          <span class="badge badge-green">Shipped</span>
+        </div>
+        <div class="project-title">Freelancer Skills Marketplace App</div>
+        <div class="project-role">Lead PM — Nentnology Solutions</div>
+        <div class="project-desc">Second Nentnology engagement — freelancer marketplace connecting skilled workers with clients. Spec to production deployment. Delivered 6 wireframes to UI team covering profile, search, booking, onboarding, and dual dashboards.</div>
+        <div class="project-stack">
+          <span class="stack-item">MERN</span><span class="stack-item">AWS</span><span class="stack-item">Wireframes</span><span class="stack-item">Figma flows</span>
+        </div>
+        <div class="project-highlight">✦ Followed through to production deployment</div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+        <div class="project-duration">Deployed</div>
+      </div>
+    </div>
+
+    <!-- Azure Pipeline -->
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-blue">Azure</span>
+          <span class="badge badge-teal">ETL</span>
+          <span class="badge badge-orange">Cloud</span>
+        </div>
+        <div class="project-title">Azure Cloud Data Pipeline</div>
+        <div class="project-role">Solo Engineer</div>
+        <div class="project-desc">Designed and deployed a scalable ETL pipeline — Azure Blob Storage as landing zone, Azure Data Factory for automated transformation and movement, Azure SQL Server as the structured output. Scheduled to run automatically, no manual intervention needed.</div>
+        <div class="project-stack">
+          <span class="stack-item">Azure Data Factory</span><span class="stack-item">Blob Storage</span><span class="stack-item">Azure SQL</span>
+        </div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+        <div class="project-duration">Cloud</div>
+      </div>
+    </div>
+
+    <!-- Geo Attendance -->
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-green">Automation</span>
+          <span class="badge badge-teal">Python</span>
+          <span class="badge badge-purple">UWF</span>
+        </div>
+        <div class="project-title">Geo-Validation Attendance System</div>
+        <div class="project-role">Engineer — University of West Florida</div>
+        <div class="project-desc">Automated attendance tracking system with geo-fenced location validation. Flags check-ins from outside permitted zones, generates daily reports, and maintains a full audit trail. Replaced manual verification for a 12+ person team.</div>
+        <div class="project-stack">
+          <span class="stack-item">Python</span><span class="stack-item">Geo-validation</span><span class="stack-item">Automated reporting</span>
+        </div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+        <div class="project-duration">UWF</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI PROJECTS -->
+<section id="ai">
+  <div class="section-header">
+    <div class="section-label">AI & LLM Engineering</div>
+    <h2 class="section-title">AI Systems Built</h2>
+    <p class="section-desc">RAG pipelines, LLM applications, and AI safety research — not just prompting, actually building.</p>
+  </div>
+
+  <!-- CRAIL Featured -->
+  <div class="project-card-big" style="border-color:rgba(155,114,255,0.3)">
+    <div style="position:absolute;top:1.5rem;right:1.5rem;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;color:var(--purple);background:rgba(155,114,255,0.1);border:1px solid rgba(155,114,255,0.2);padding:0.25rem 0.625rem;border-radius:100px">RESEARCH PROTOTYPE</div>
+    <div class="project-badges">
+      <span class="badge badge-purple">RAG Security</span>
+      <span class="badge badge-blue">Python</span>
+      <span class="badge badge-teal">FAISS</span>
+      <span class="badge badge-orange">LangChain</span>
+      <span class="badge badge-green">Live Demo</span>
+    </div>
+    <div class="project-title">CRAIL — Retrieval Integrity Safety Layer</div>
+    <div class="project-role">Solo Researcher & Engineer · Masters Research · 2025</div>
+    <div class="project-desc">Built a safety layer that sits on top of any RAG system and intercepts responses when retrieved chunks come from the wrong document — a vulnerability called PCH (Prompt-Context Hijacking). LlamaGuard, NeMo Guardrails, and Guardrails AI don't catch this. CRAIL does. Comes with a Streamlit live demo where you can watch it intercept a contaminated response in real time.</div>
+    <div style="margin:1.5rem 0">
+      <div class="big-stat"><span class="big-stat-num">100%</span><span class="big-stat-label">interception rate</span></div>
+      <div class="big-stat"><span class="big-stat-num">60</span><span class="big-stat-label">test queries</span></div>
+      <div class="big-stat"><span class="big-stat-num">3-tier</span><span class="big-stat-label">risk classification</span></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-item">Python</span>
+      <span class="stack-item">LangChain</span>
+      <span class="stack-item">FAISS</span>
+      <span class="stack-item">OpenAI GPT</span>
+      <span class="stack-item">Streamlit</span>
+      <span class="stack-item">Vector embeddings</span>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-blue">RAG</span>
+          <span class="badge badge-purple">LangChain</span>
+          <span class="badge badge-teal">End-to-End</span>
+        </div>
+        <div class="project-title">RAG + LLM Pipeline System</div>
+        <div class="project-role">Solo Engineer</div>
+        <div class="project-desc">Full end-to-end RAG pipeline — PDF ingestion, semantic chunking, FAISS vector embeddings, top-k retrieval, and grounded LLM response generation. Integrated both OpenAI GPT and Anthropic Claude APIs for comparative evaluation.</div>
+        <div class="project-stack">
+          <span class="stack-item">Python</span><span class="stack-item">LangChain</span><span class="stack-item">FAISS</span><span class="stack-item">OpenAI</span><span class="stack-item">Claude API</span>
+        </div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-teal">Multi-Turn</span>
+          <span class="badge badge-blue">Memory Mgmt</span>
+          <span class="badge badge-purple">Dual API</span>
+        </div>
+        <div class="project-title">Multi-Turn LLM Conversational Assistant</div>
+        <div class="project-role">Solo Engineer</div>
+        <div class="project-desc">Contextually aware conversational assistant built on OpenAI GPT and Claude APIs. Built custom memory management from scratch — rolling context window with compression so older turns are summarized without losing thread. User-adaptive response strategies.</div>
+        <div class="project-stack">
+          <span class="stack-item">Python</span><span class="stack-item">OpenAI API</span><span class="stack-item">Anthropic API</span><span class="stack-item">Context compression</span>
+        </div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-badges">
+          <span class="badge badge-orange">UWF</span>
+          <span class="badge badge-blue">SharePoint</span>
+          <span class="badge badge-green">Automation</span>
+        </div>
+        <div class="project-title">AI Automation Workflows — UWF</div>
+        <div class="project-role">AI Engineering & Data Research Assistant</div>
+        <div class="project-desc">AI-powered automation workflows using Python and LLM APIs for university operations. SharePoint governance framework across 3 tiers. Power Automate integration. KPI dashboards and revenue forecasting for senior leadership in Tableau and Power BI.</div>
+        <div class="project-stack">
+          <span class="stack-item">Python</span><span class="stack-item">LLM APIs</span><span class="stack-item">SharePoint</span><span class="stack-item">Power Automate</span><span class="stack-item">Tableau</span>
+        </div>
+      </div>
+      <div class="project-meta">
+        <span class="project-year">2025</span>
+        <div class="project-duration">Ongoing</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Academic Work</h2>
+    <p class="section-desc">Original research at the intersection of AI systems, human behavior, and machine learning.</p>
+  </div>
+
+  <div class="research-card" style="border-color:rgba(155,114,255,0.25)">
+    <div class="research-type">Masters Thesis · In Progress</div>
+    <div class="research-title">Automation Bias & Trust Calibration in LLM-Assisted Decision Making</div>
+    <div class="research-desc">Two-system empirical study: System A (NLP + RAG + Human-in-the-Loop checkpoints) vs System B (baseline RAG, no intervention). Research question: do HITL design checkpoints actually change how carefully users verify AI outputs — or does automation bias persist anyway? Builds on the CRAIL prototype infrastructure. University of West Florida, MSc Data Science.</div>
+    <div class="research-result">Empirical A/B experiment · Behavioral measurement · Generative AI evaluation</div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-type">Conference Paper · Submitted</div>
+    <div class="research-title">CRAIL: Detecting and Intercepting Retrieval Integrity Failures in RAG Systems</div>
+    <div class="research-desc">Formal writeup of the CRAIL experiment covering PCH (Prompt-Context Hijacking) vulnerability taxonomy, experimental design across 6 document pair scenarios, 60 total queries, and statistical analysis using Wilson 95% confidence intervals. Identifies a gap not addressed by any existing LLM guardrail system.</div>
+    <div class="research-result">100% interception on high-contamination scenarios · Novel vulnerability class documented</div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-type">Applied ML Research · 2024</div>
+    <div class="research-title">Neonatal Health Risk Classification — Logistic Regression, GAMs & SVMs</div>
+    <div class="research-desc">Comparative supervised ML study applying Logistic Regression, Generalized Additive Models, and SVMs to biomedical neonatal risk classification. Evaluated model interpretability and clinical relevance alongside accuracy. Applied XAI techniques to surface dominant risk factors for clinical decision support. GAMs recommended for final deployment due to interpretability advantage.</div>
+    <div class="research-result">GAMs selected over SVMs for clinical interpretability — XAI applied</div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-type">Quantitative Study · 2024</div>
+    <div class="research-title">Student Training Program Effectiveness — Statistical Analysis</div>
+    <div class="research-desc">Designed and executed a quantitative institutional research study evaluating whether training programs produce statistically significant improvements in performance outcomes. Applied inferential statistics, regression analysis, and hypothesis testing. Findings reported to institutional stakeholders with actionable recommendations.</div>
+    <div class="research-result">Regression + hypothesis testing · Institutional recommendations delivered</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PM SECTION -->
+<section id="pm">
+  <div class="section-header">
+    <div class="section-label">Product Management</div>
+    <h2 class="section-title">PM Deliverables</h2>
+    <p class="section-desc">Not just planning — full lifecycle ownership from spec to shipped product.</p>
+  </div>
+
+  <div class="pm-grid">
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <span class="pm-num">3</span>
+        <div class="pm-icon" style="background:rgba(59,158,255,0.1);color:var(--accent)">📋</div>
+      </div>
+      <div class="pm-title">Product Specs Written</div>
+      <div class="pm-desc">TravelGPT, Nentnology Mortgage Tool, Nentnology Freelancer App — full professional specs including scope, requirements, architecture, and acceptance criteria.</div>
+    </div>
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <span class="pm-num">6</span>
+        <div class="pm-icon" style="background:rgba(0,212,170,0.1);color:var(--accent2)">🖼</div>
+      </div>
+      <div class="pm-title">Wireframes Delivered</div>
+      <div class="pm-desc">Six wireframes for the Nentnology Freelancer App UI team — profile, search & filter, booking flow, both dashboards, and onboarding.</div>
+    </div>
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <span class="pm-num">2</span>
+        <div class="pm-icon" style="background:rgba(155,114,255,0.1);color:var(--purple)">🏢</div>
+      </div>
+      <div class="pm-title">Commercial Clients</div>
+      <div class="pm-desc">Primary PM interface for Nentnology Solutions across two products — stakeholder management, requirements, delivery coordination.</div>
+    </div>
+    <div class="pm-card">
+      <div class="pm-card-top">
+        <span class="pm-num">1</span>
+        <div class="pm-icon" style="background:rgba(245,166,35,0.1);color:var(--accent4)">🚀</div>
+      </div>
+      <div class="pm-title">Product Deployed</div>
+      <div class="pm-desc">Followed the Freelancer App from spec to production deployment — not just planning, but seeing it through to live.</div>
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem">
+    <table class="skills-table">
+      <tr><td>Spec writing</td><td>TravelGPT, Nentnology Mortgage, Nentnology Freelancer — scope, requirements, arch</td></tr>
+      <tr><td>Flowcharting</td><td>End-to-end mortgage automation process diagrams</td></tr>
+      <tr><td>Wireframing</td><td>6 wireframes for Nentnology UI team</td></tr>
+      <tr><td>Architecture</td><td>MERN + AWS stacks defined across 3 commercial products</td></tr>
+      <tr><td>API planning</td><td>Credit, property valuation, KYC APIs — data contracts and timelines</td></tr>
+      <tr><td>Sprint tracking</td><td>Taiga: epics, stories, sprints, burndown — 6 months on TravelGPT</td></tr>
+      <tr><td>Stakeholder mgmt</td><td>Commercial client-facing PM — primary contact for engineering alignment</td></tr>
+      <tr><td>Full lifecycle</td><td>Spec to deployment on Nentnology Freelancer App</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Work History</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-period">Jan 2025 — Present</div>
+      <div class="tl-title">AI Engineering & Data Research Assistant</div>
+      <div class="tl-company">University of West Florida · Pensacola, FL</div>
+      <ul class="tl-bullets">
+        <li>AI automation workflows using Python, OpenAI, and Anthropic APIs for university operations</li>
+        <li>KPI dashboards and revenue forecasting in Tableau, Power BI, SQL, Excel for senior leadership</li>
+        <li>Built geo-validation attendance system and SharePoint governance framework (3-tier)</li>
+        <li>Supervise team of 7-8, workflow optimization, onboarding systems</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-period">Sep 2024 — Feb 2026</div>
+      <div class="tl-title">Business Analyst & AI/PM Consultant</div>
+      <div class="tl-company">Netnology Solutions · Remote</div>
+      <ul class="tl-bullets">
+        <li>Led PM work on two commercial products — mortgage automation tool and freelancer marketplace</li>
+        <li>Wrote professional product specs, flowcharts, wireframes, and architecture documentation</li>
+        <li>Requirements gathering, functional specs, stakeholder liaison, Agile/Scrum delivery</li>
+        <li>Excel automation tools, data flow mapping, and process documentation for 4 client projects</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-period">May 2024 — Aug 2024</div>
+      <div class="tl-title">Research Intern → AI & Technical Operations Associate</div>
+      <div class="tl-company">Liberty360 · Leeds, UK</div>
+      <ul class="tl-bullets">
+        <li>Aviation documentation environment — human factors research and operational workflow analysis</li>
+        <li>Promoted to full-time technical operations role based on research contributions</li>
+        <li>Workflow automation, documentation structuring, internal systems coordination</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-period">Oct 2022 — Jun 2024</div>
+      <div class="tl-title">Team Lead & Operations Analyst</div>
+      <div class="tl-company">Soul Food Groups · Leeds, UK</div>
+      <ul class="tl-bullets">
+        <li>Supervised 30+ staff, daily KPI tracking, compliance logs, shift-level P&L monitoring</li>
+        <li>Data-driven operational reports and onboarding systems for new hires</li>
+        <li>Operations and management work that started in 2020 — the foundation of the whole career</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Let's Talk</h2>
+    <p class="section-desc">Open to engineering roles, PM positions, AI consulting, and research collaborations.</p>
+  </div>
+
+  <div class="contact-wrapper">
+    <div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem;color:var(--text)">Shaheen Memon</h3>
+      <p style="color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1.5rem">Software engineer and AI builder based in Pensacola, FL. MSc Data Science (4.0 GPA) at University of West Florida. Available for opportunities across engineering, AI, and product management.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+        <span class="tag active">Full-Stack</span>
+        <span class="tag active">AI / LLM</span>
+        <span class="tag active">Product Manager</span>
+        <span class="tag">Open to work</span>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:shaheenmeman200023@gmail.com" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <div>
+          <div class="contact-link-text">shaheenmeman200023@gmail.com</div>
+          <div class="contact-link-sub">Email — preferred</div>
+        </div>
+      </a>
+      <a href="tel:8504205994" class="contact-link">
+        <div class="contact-link-icon">📞</div>
+        <div>
+          <div class="contact-link-text">850-420-5994</div>
+          <div class="contact-link-sub">Phone · Pensacola, FL</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/shaheen-meman-b4266b252" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div>
+          <div class="contact-link-text">LinkedIn Profile</div>
+          <div class="contact-link-sub">linkedin.com/in/shaheen-meman-b4266b252</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Shaheen Memon · Pensacola, FL · Built with intention — not a template.</p>
+</footer>
+
+<script>
+const glow = document.getElementById('glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.project-card, .project-card-big, .research-card, .pm-card, .skill-card, .timeline-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.25s';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

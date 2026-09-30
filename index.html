@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaheen Memon · Data Science, GIS &amp; AI</title>
+<title>Shaheen Memon · Data, GIS &amp; AI</title>
 <meta name="description" content="Shaheen Memon: MS Data Science candidate at the University of West Florida. GIS and machine-learning analysis, RAG safety research, and full-stack apps, each linked to its source code.">
 <meta property="og:title" content="Shaheen Memon · Data Science, GIS & AI">
 <meta property="og:description" content="Projects in GIS, machine learning, and AI safety, each linked to its source.">
@@ -166,9 +166,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <main id="top">
 
 <div class="wrap hero">
-  <p class="eyebrow">Data Science · GIS · Applied AI</p>
+  <p class="eyebrow">Business &amp; Data Analysis · GIS · Applied AI</p>
   <h1>Shaheen Memon</h1>
-  <p class="lede">I build <strong>geospatial and machine-learning analyses</strong>, research <strong>failure modes in RAG / LLM systems</strong>, and ship <strong>working software</strong>. MS Data Science candidate at the University of West Florida, based in Pensacola, FL.</p>
+  <p class="lede">Analyst with 6+ years across <strong>financial and business analysis</strong>, <strong>data analytics</strong>, and <strong>technical project delivery</strong>. I build the dashboards leadership uses for budget decisions, turn satellite and Census data into siting decisions, research how RAG systems fail, and ship working AI software.</p>
   <div class="links">
     <a class="btn primary" href="#projects">See the projects</a>
     <a class="btn" href="https://github.com/Shaheen2300" target="_blank" rel="noopener">
@@ -182,8 +182,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       Email</a>
   </div>
   <div class="facts">
-    <span>MS Data Science, UWF · 4.0 GPA · Dec 2026</span>
-    <span>BSc (Hons) Computer Science, Leeds Beckett</span>
+    <span>100+ Power BI &amp; Tableau dashboards</span>
+    <span>150+ employees trained</span>
+    <span>M.S. Data Science, UWF</span>
     <span>Pensacola, FL</span>
   </div>
 </div>
@@ -214,6 +215,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
           <div class="stat"><b>0.78</b><small>AUC on held-out 2026 data</small></div>
         </div>
         <ul class="points">
+          <li>Rebuilt the satellite-data pipeline on multiprocessing after diagnosing an HDF5 thread-safety bottleneck. An estimated 18-day extraction ran in under 14 hours with zero errors.</li>
           <li>Found that 128,659 residents live more than 15 minutes' drive from any shelter (multi-source Dijkstra over OpenStreetMap roads).</li>
           <li>Two anomaly detectors (z-score and 30-minute burst) matched NOAA storm reports day for day during June 2025.</li>
           <li>A 2026 out-of-time test showed the 2-year model saturating under El Niño. Retraining on 4 years fixed it.</li>
@@ -231,9 +233,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <!-- CRAIL -->
       <article class="card">
         <div class="meta"><span class="pill good">Research prototype</span><span class="pill">AI safety</span><span class="pill">RAG</span></div>
-        <h3>CRAIL: catching contaminated RAG answers</h3>
+        <h3>CRAIL &amp; Trust Loop: catching contaminated RAG answers</h3>
         <p class="role">Contextual Risk-Aware Intervention Layer</p>
-        <p>When a RAG app's vector index isn't cleared between uploads, chunks from an old document can silently leak into answers about a new one. Our paper calls this <em>Phantom Context Hallucination</em>. CRAIL sits between retrieval and the user, scores the risk, and delivers the answer, holds it for a human reviewer, or blocks it.</p>
+        <p>When a RAG app's vector index isn't cleared between uploads, chunks from an old document can silently leak into answers about a new one. Our paper calls this <em>Phantom Context Hallucination</em>. CRAIL sits between retrieval and the user, scores the risk, and delivers the answer, holds it for a human reviewer, or blocks it. The Trust Loop layer then makes human review auditable: reviewers make reason-coded, timestamped decisions, and replies they write themselves are checked against the verified document before release.</p>
         <div class="stats">
           <div class="stat"><b>73.3%</b><small>of pilot queries contaminated with no warning</small></div>
           <div class="stat"><b>72.7%</b><small>of those intercepted by CRAIL</small></div>
@@ -247,16 +249,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
       <!-- AI-POS -->
       <article class="card">
-        <div class="meta"><span class="pill">Full-stack</span><span class="pill">React</span><span class="pill plain">v4</span></div>
-        <h3>Smoke Shop POS</h3>
-        <p class="role">Point of sale, inventory &amp; loyalty for a retail shop</p>
-        <p>A complete point-of-sale system: per-employee login, barcode-first inventory, loyalty tiers, gift cards and split payments, cash log and end-of-day close, and Excel round-trip bulk editing. An AI invoice scanner uses Claude to receive a delivery invoice into stock.</p>
+        <div class="meta"><span class="pill">AI</span><span class="pill">Full-stack</span><span class="pill">React</span></div>
+        <h3>AI-Powered Point-of-Sale &amp; Inventory Platform</h3>
+        <p class="role">Register, inventory, loyalty and reporting, automated with Claude</p>
+        <p>A complete retail platform: register, inventory, loyalty tiers, discount campaigns, employee clock-in and shift tracking, and reporting. AI does the slow parts. It reads supplier invoices straight into stock and looks up products that public barcode databases don't know. A built-in assistant answers store and sales questions in plain language.</p>
         <div class="stats">
+          <div class="stat"><b>~2 h → min</b><small>inventory entry, now a review-and-approve step</small></div>
+          <div class="stat"><b>1,976</b><small>products migrated from the legacy POS</small></div>
           <div class="stat"><b>153</b><small>automated tests</small></div>
-          <div class="stat"><b>11</b><small>tables behind row-level security</small></div>
-          <div class="stat"><b>1,769</b><small>UPCs bundled for offline lookup</small></div>
         </div>
-        <p class="stack">React 18 · Supabase (Postgres, Auth, RLS) · Anthropic Claude API · pdf.js · SheetJS · Vercel</p>
+        <ul class="points">
+          <li>USB and phone-camera barcode scanning, with UPC lookup and an AI fallback.</li>
+          <li>Revenue dashboards, low-stock alerts, and end-of-day to yearly reports on any date range.</li>
+          <li>Supabase backend with row-level security on all 11 tables, and an offline fallback so no sale is lost.</li>
+        </ul>
+        <p class="stack">React 18 · Anthropic Claude API · Supabase (Postgres, Auth, RLS) · pdf.js · SheetJS · Vercel</p>
         <div class="actions">
           <span class="private"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>Private repository. Walkthrough available on request.</span>
         </div>
@@ -359,41 +366,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
           <h3>Business Process Analyst</h3>
           <p class="org">University of West Florida · Pensacola, FL</p>
           <ul class="points">
-            <li>Built and maintain 26+ operational and revenue dashboards tracking departmental spending, auxiliary accounts, and monthly performance.</li>
-            <li>Automated monthly financial reporting with Python (pandas) and validated daily transactions with SQL before audit review.</li>
-            <li>Wrote the department operations manual that is now the standard reference department-wide.</li>
+            <li>Develop and maintain 60+ Tableau and Power BI dashboards giving leadership real-time visibility into revenue, spending, and budget activity.</li>
+            <li>Produce departmental revenue and P&amp;L reports and present them to leadership to guide budget decisions.</li>
+            <li>Audit millions of dollars in transactions against source records. I enforce validation and deposit-reconciliation rules and document data lineage, so every reported figure ties back to its source.</li>
+            <li>Wrote the department's operations manual, now the standard reference used department-wide.</li>
+            <li>Supervise and train a frontline student workforce (100+ trained) and own hiring, onboarding, and performance reviews.</li>
           </ul>
         </div>
       </div>
       <div class="job">
         <div class="when">Aug 2024 – Present</div>
         <div>
-          <h3>Senior Automation Analyst (Contract)</h3>
+          <h3>Senior Technical Analyst</h3>
           <p class="org">Netnology Solutions · Remote</p>
           <ul class="points">
-            <li>Turned client needs into developer-ready specifications for three commercial web applications: workflows, wireframes, database requirements, and acceptance criteria.</li>
-            <li>Coordinated delivery across developers, UI/UX, QA, and client stakeholders through to production releases.</li>
+            <li>Lead software projects for multiple clients as the main liaison between clients and engineers, from requirements through production release.</li>
+            <li>Turn client conversations into business requirements, functional specs, workflow diagrams, and acceptance criteria. I also define and validate database designs with SQL and Power BI.</li>
+            <li>Designed the business processes, transaction flows, and reporting requirements for a cloud-based point-of-sale platform.</li>
+            <li>Implemented geo-location attendance and route tracking, giving management real-time visibility of field coverage.</li>
+            <li>Coordinate delivery across developers, UI/UX, and QA. I also manage hiring, onboarding, and payroll coordination for the team.</li>
           </ul>
         </div>
       </div>
       <div class="job">
         <div class="when">May 2024 – Aug 2024</div>
         <div>
-          <h3>IT Support Analyst (formerly Research Intern)</h3>
+          <h3>IT Support Analyst</h3>
           <p class="org">Liberty360 · Leeds, UK</p>
           <ul class="points">
-            <li>Did human-factors research and workflow analysis in an aviation documentation environment, and was promoted to a full-time technical role on the strength of that research.</li>
-            <li>Built a customised SharePoint environment that streamlined internal workflows.</li>
+            <li>Engineered IT support fixes for recurring system, access, and documentation issues in an aviation documentation environment.</li>
+            <li>Deployed a customised SharePoint environment that improved document accessibility, transparency, and workflow efficiency.</li>
           </ul>
         </div>
       </div>
       <div class="job">
         <div class="when">Dec 2021 – May 2024</div>
         <div>
-          <h3>Team Lead &amp; Operations Analyst</h3>
+          <h3>Team Lead &amp; Operations Manager</h3>
           <p class="org">Soul Food Groups · Leeds, UK</p>
           <ul class="points">
-            <li>Supervised 30+ staff across shifts, tracked daily KPIs and shift-level P&amp;L, and ran onboarding and compliance audits.</li>
+            <li>Supervised 30+ frontline employees across shifts, covering staffing, scheduling, and daily operations for over 2 years.</li>
+            <li>Tracked daily KPIs and shift-level P&amp;L, led compliance audits, and ran root-cause investigations into service issues.</li>
+            <li>Designed and delivered onboarding, training, and mentorship programmes for new hires.</li>
           </ul>
         </div>
       </div>
@@ -407,19 +421,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     <div>
       <h2 style="margin-bottom:1.25rem">Skills</h2>
       <dl class="skills">
-        <dt>Data &amp; ML</dt><dd>Python (pandas, NumPy, scikit-learn, statsmodels), R, SQL, spatial cross-validation, anomaly detection</dd>
-        <dt>GIS</dt><dd>GeoPandas, OSMnx / network analysis, ArcGIS Pro &amp; Online, QGIS, Folium, spatial joins, geocoding</dd>
-        <dt>AI / LLM</dt><dd>RAG, LangChain, FAISS, OpenAI and Anthropic APIs, LLM-as-judge evaluation</dd>
-        <dt>Software</dt><dd>React, Node/Express, MongoDB, Supabase/Postgres, Streamlit, Git</dd>
-        <dt>Analytics &amp; delivery</dt><dd>Tableau, Power BI, Excel, Azure Data Factory, requirements &amp; specs, Agile (Jira, Taiga)</dd>
+        <dt>Financial analytics</dt><dd>KPI &amp; P&amp;L reporting, revenue &amp; budget analysis, variance analysis, reconciliation, transaction auditing, audit preparation</dd>
+        <dt>Data &amp; BI</dt><dd>SQL, Power BI, Tableau, Advanced Excel, Google Sheets, SharePoint, data validation, data lineage, data cleansing</dd>
+        <dt>AI &amp; technical</dt><dd>Python, machine learning, GIS (GeoPandas, OSMnx, Folium), RAG (LangChain, FAISS), OpenAI &amp; Claude APIs, React, Streamlit, requirements &amp; functional specs</dd>
+        <dt>Leadership &amp; operations</dt><dd>Team supervision, hiring &amp; onboarding, training &amp; coaching, workforce scheduling, process improvement, root-cause analysis, compliance</dd>
       </dl>
     </div>
     <div class="edu">
       <h2 style="margin-bottom:1.25rem">Education</h2>
       <h3>M.S. Data Science, Business Analytics track</h3>
-      <p>University of West Florida · 4.0 GPA · expected Dec 2026</p>
+      <p>University of West Florida · Pensacola, FL</p>
       <h3>BSc (Hons) Computer Science</h3>
-      <p>Leeds Beckett University · 2021</p>
+      <p>Leeds Beckett University · Leeds, UK</p>
     </div>
   </div>
 </section>
@@ -428,7 +441,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section id="contact">
   <div class="wrap">
     <h2>Get in touch</h2>
-    <p class="lede" style="margin-top:.75rem;margin-bottom:0">Open to data science, GIS, and AI roles, and to research collaborations.</p>
+    <p class="lede" style="margin-top:.75rem;margin-bottom:0">Open to business, data, and financial analyst roles, technical project work, and AI/GIS projects.</p>
     <div class="contact">
       <a class="btn primary" href="mailto:shaheenmeman200023@gmail.com">shaheenmeman200023@gmail.com</a>
       <a class="btn" href="https://www.linkedin.com/in/shaheen-meman-b4266b252" target="_blank" rel="noopener">LinkedIn</a>
